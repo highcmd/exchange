@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Exchanges history</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ exchange.id }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ exchange.city }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if exchange.date %}{{ exchange.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ exchange.amount }}</td>
+            </tr>
+            <tr>
+                <th>Foregincurrency</th>
+                <td>{{ exchange.foreginCurrency }}</td>
+            </tr>
+            <tr>
+                <th>Amountafterexchange</th>
+                <td>{{ exchange.amountAfterExchange }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('history_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

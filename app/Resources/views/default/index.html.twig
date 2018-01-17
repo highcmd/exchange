@@ -1,0 +1,10 @@
+<a href="{{ path('history_index') }}">History</a>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+{% if exchange %}
+    PLN/{{ message }} <b>{{ exchange }}</b>
+{% endif %}
+
